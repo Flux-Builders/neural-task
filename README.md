@@ -1,63 +1,142 @@
-# 🚀 NEURAL-TASK 
+# 🧠 Neural-Task: AI-Orchestrated Project Management Engine
 
-### **The AI-Orchestrated Project Management Engine**
-*Built by **FluxBuilders** @ Mbeya University of Science and Technology (MUST)*
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stack: Vite-React](https://img.shields.io/badge/Frontend-Vite%20%2B%20React-blue)](https://vitejs.dev/)
-[![Stack: FastAPI](https://img.shields.io/badge/Backend-FastAPI-green)](https://fastapi.tiangolo.com/)
-[![Stack: Gemini-AI](https://img.shields.io/badge/AI-Gemini%201.5%20Pro-purple)](https://ai.google.dev/)
+**Neural-Task** is a production-ready SaaS MVP designed for high-performance engineering teams. It transforms high-level project visions into actionable, technical roadmaps using AI-orchestrated synthesis and real-time task decomposition.
 
 ---
 
-## 📖 Overview
-**Neural-Task** is a high-performance project management platform designed to eliminate the "Cold-Start" problem in software development. By leveraging Large Language Models (LLMs), Neural-Task transforms high-level project visions into actionable, technical roadmaps. 
+## 📖 Project Architecture
 
-It doesn't just store your tasks; it **thinks** through them.
+The system is built as a modular monorepo, separating human-centric interfaces from the AI-driven core logic.
 
----
-
-## ⚡ The Problem & Our Solution
-
-### **The Problem**
-Many developers—especially students—know *what* they want to build but struggle with the *how*. Breaking down a "User Authentication System" into 10 technical steps is a cognitive barrier that slows down production.
-
-### **Our Solution**
-**Neural-Task** acts as a virtual Senior Architect. Input your goal, and our **Neural-Decomposition Engine** generates a full Kanban board with:
-1.  Technical sub-tasks.
-2.  Suggested tech stacks for each task.
-3.  AI-generated "Coding Tips" to get you started instantly.
+- **Frontend:** React SPA powered by Vite and the latest **Tailwind CSS v4**.
+- **Backend:** High-performance asynchronous API built with **FastAPI**.
+- **AI Core:** Hybrid intelligence integrating **Google Gemini 1.5 Pro** and **OpenAI GPT-4**.
 
 ---
 
-## ✨ Key Features
-- **🧠 Neural-Decomposition:** Real-time task breakdown using Gemini 1.5 Pro.
-- **✨ Vibe-Coded UI:** A "Cyber-Professional" interface featuring glassmorphism and 3D hover effects.
-- **🛹 Dynamic Kanban:** Drag-and-drop workflow powered by Framer Motion.
-- **🔐 Secure Auth:** Enterprise-grade authentication via Supabase.
-- **📊 Progress Insights:** Visual percentage trackers for individual and team completion rates.
+## �️ Tech Stack & Requirements
+
+### Frontend Requirements
+
+- **Node.js:** v18.0.0 or higher
+- **Package Manager:** npm (v9+)
+- **Core:** React 19, TypeScript
+- **Styling:** Tailwind CSS v4, Lucide-React
+- **State/Routing:** React Router v7
+
+### Backend Requirements
+
+- **Python:** 3.9 or higher
+- **Framework:** FastAPI
+- **Validation:** Pydantic v2
+- **Auth:** OAuth2 with JWT (python-jose, passlib)
+- **Database (Integration Ready):** Supabase/PostgreSQL
 
 ---
 
-## 🛠 Tech Stack
+## 🚀 Installation & Setup
 
-| Component | Technology | Role |
-| :--- | :--- | :--- |
-| **Frontend** | React, Vite, TypeScript | High-speed SPA architecture |
-| **Styling** | Tailwind CSS, Framer Motion | Aesthetic & 3D animations |
-| **Backend** | Python, FastAPI | High-performance asynchronous API |
-| **Database** | Supabase (PostgreSQL) | Real-time data & authentication |
-| **AI Engine** | Google Gemini API | Task logic & technical guidance |
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd neural-task
+```
+
+### 2. Backend Configuration
+
+Navigate to the `/backend` directory and set up your virtual environment:
+
+```bash
+cd backend
+python -m venv venv
+# Windows
+.\venv\Scripts\activate
+# Unix/MacOS
+source venv/bin/activate
+
+# Install Dependencies
+pip install -r requirements.txt
+```
+
+**Configure Environment Variables:**
+Create a `.env` file in the `/backend` directory:
+
+```env
+GOOGLE_API_KEY=your_gemini_key_here
+OPEN_AI_KEY=your_openai_key_here
+SECRET_KEY=your_generate_jwt_secret_here
+```
+
+### 3. Frontend Configuration
+
+Navigate to the `/frontend` directory:
+
+```bash
+cd ../frontend
+npm install
+```
+
+**Configure Environment Variables:**
+Create a `.env` file in the `/frontend` directory:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000/api/v1
+```
 
 ---
 
-## 🏗 Project Structure (Monorepo)
-```text
-/neural-task
-├── /frontend           # React + Tailwind + Vite
-│   ├── /src/components # Reusable UI Components
-│   └── /src/hooks      # AI logic & State management
-├── /backend            # FastAPI + Python
-│   ├── /app/api        # Routes (Auth, Tasks, AI)
-│   └── /app/core       # AI Engine (Gemini Integration)
-└── /docs               # Project Charter & Technical Specs
+## ⚡ Running the Application
+
+### Start Backend (FastAPI)
+
+From the `/backend` directory:
+
+```bash
+# Using uvicorn directly
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+The API documentation will be available at `http://localhost:8000/docs`.
+
+### Start Frontend (Vite)
+
+From the `/frontend` directory:
+
+```bash
+npm run dev
+```
+
+The application will be accessible at `http://localhost:5173`.
+
+---
+
+## 🧩 Featured Screens
+
+1. **Executive Hub:** A 4-column mission control for high-level synthesis and team synergy.
+2. **Priority Matrix:** A 2x2 "High Impact/Low Effort" grid for strategic task selection.
+3. **Neural Search:** Semantic investigation into project knowledge bases.
+4. **AI Co-Pilot:** Real-time workspace optimization and task decomposition.
+5. **Flow Analytics:** Deep-focus heatmaps and productivity metrics.
+
+---
+
+## 📐 Design System
+
+Neural-Task uses a **"Cyber-Professional"** aesthetic:
+
+- **Palette:** `Obsidian (#0a0a0a)`, `Trust Teal (#2dd4bf)`, `Strategic Amber (#fbbf24)`.
+- **UI Patterns:** Glassmorphism, 16px soft border-radii, and subtle micro-animations.
+- **Typography:** Inter/System Sans for maximum readability.
+
+---
+
+## 🤝 Contribution Guidelines
+
+Built by **FluxBuilders** @ MUST. We welcome contributions that align with our vision of eliminating the "Cold-Start" problem in development.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
