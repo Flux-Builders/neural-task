@@ -10,7 +10,7 @@ import {
   Settings,
   LogOut
 } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: 'Executive Hub', path: '/' },
@@ -26,6 +26,12 @@ const sidebarItems = [
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Simulate logout
+    navigate('/login');
+  };
 
   return (
     <aside className="w-64 h-screen bg-obsidian-lighter border-r border-white/5 flex flex-col fixed left-0 top-0">
@@ -54,7 +60,10 @@ const Sidebar = () => {
       </nav>
 
       <div className="p-4 mt-auto">
-        <button className="flex items-center gap-3 px-3 py-2 w-full text-slate-400 hover:text-red-400 hover:bg-red-400/5 rounded-2xl transition-all">
+        <button 
+          onClick={handleLogout}
+          className="flex items-center gap-3 px-3 py-2 w-full text-slate-400 hover:text-red-400 hover:bg-red-400/5 rounded-2xl transition-all"
+        >
           <LogOut className="w-5 h-5" />
           <span className="font-medium">Logout</span>
         </button>
