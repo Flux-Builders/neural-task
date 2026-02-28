@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# 🎨 Neural-Task Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern Single Page Application (SPA), built as a human-centric interface for the high-performance AI-orchestrated Project Management Engine.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack & Key Libraries
 
-## React Compiler
+Below are the core libraries used in the frontend and their specific purposes:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. **Core UI & Build Tools**
 
-## Expanding the ESLint configuration
+- **React 19**: A powerful library for building declarative and reactive user interfaces with high performance.
+- **Vite**: Next-generation frontend tooling providing an extremely fast development environment and highly optimized production builds.
+- **TypeScript**: Adds static typing to JavaScript, ensuring robust code and better developer experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. **Navigation & Communication**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React Router v7**: The standard routing library for React, handling all navigation and URL-based state management within the application.
+- **Axios**: A promise-based HTTP client for making API requests to the FastAPI backend with ease and security.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 3. **Data Visualization & Icons**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Recharts**: A composable charting library built on React components, used for rendering project analytics and performance metrics.
+- **Lucide-React**: A beautiful and consistent icon library used for all UI elements, providing scalable vector graphics.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 4. **Styling & Design System**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Tailwind CSS v4**: A modern, utility-first CSS framework that allows for rapid UI development with a "Cyber-Professional" aesthetic.
+- **Clsx / Tailwind-Merge**: Lightweight utilities for conditionally joining CSS class names and merging Tailwind classes without conflicts.
+- **Autoprefixer / PostCSS**: Tools for transforming CSS with JavaScript and adding vendor prefixes for complete cross-browser compatibility.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 5. **Quality & Standardisation**
+
+- **ESLint**: A pluggable linting utility for identifying and fixing potential issues in JavaScript and TypeScript codebases.
+- **TSConfig**: Standardised TypeScript compiler configuration that ensures type safety across the entire project.
+
+---
+
+## 🚀 Getting Started
+
+1.  **Installation**:
+
+    ```bash
+    npm install
+    ```
+
+2.  **Environment Setup**:
+    Create a `.env` file in the root of `/frontend` and add your backend's URL:
+
+    ```env
+    VITE_API_BASE_URL=http://localhost:8000/api/v1
+    ```
+
+3.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+    The application will be accessible at `http://localhost:5173`.
